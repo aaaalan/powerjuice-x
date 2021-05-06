@@ -1,0 +1,31 @@
+<div class="ui grid" *ngIf="location">
+
+  <div class="twelve wide column">
+    <h1 class="ui header">Name: {{ location.name }}</h1>
+    <h3 class="ui header">Stadt:{{ location.city }}</h3>
+    <h3 class="ui header">Straße: {{ location.street }}</h3>
+    <h3 class="ui header">Plz: {{ location.zipcode }}</h3>
+
+    <div class="ui divider"></div>
+    <div class="ui grid">
+    
+      <div class="four wide column">
+        <h4 class="ui header">Impfung</h4>
+        <span *ngFor="let vac of location.vaccinations; last as l">
+          <h4 class="ui header">MaxUsers: {{ vac.maxUsers }}</h4>
+          <h4 class="ui header">Datum: {{ vac.date | date:'shortDate' }}</h4>
+          <h4 class="ui header">Uhrzeit: {{ vac.startTime }}</h4>
+          <div class="ui divider"></div>
+        <span *ngIf="!l">
+        </span>
+        </span>
+        <a routerLink=".." class="pwr-button">Zurück zur LocationListe</a>
+
+        <a class="pwr-button grey" (click)="removeLocation()">
+          <i class="remove icon"></i> Buch löschen
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
