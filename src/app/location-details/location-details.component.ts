@@ -11,6 +11,8 @@ import { LocationStoreService } from "../shared/location-store.service";
 })
 export class LocationDetailsComponent implements OnInit {
   location: Location = LocationFactory.empty();
+   
+  
 
   //@Input() location: Location;
 
@@ -41,6 +43,7 @@ export class LocationDetailsComponent implements OnInit {
    this.ls
       .getSingle(+params["id"])
       .subscribe(l => (this.location = l));
+
 
   }
 }

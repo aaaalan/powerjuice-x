@@ -1,3 +1,22 @@
+<div class="ui stackable  grid" *ngIf="location">
+  <div class="sixteen wide column">
+    <div class="item">
+      <div class="content">
+        <div class="header">{{ location.name }}</div>
+        <div class="meta">
+          <span class="loc"> {{location.zipcode}}-{{ location.city }},{{ location.street }} </span>
+
+        </div>
+        <div class="description">
+          <p> Verfügbare Impftermine in {{location.name}}:</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
 <div class="ui grid" *ngIf="location">
 
   <div class="twelve wide column">
@@ -8,7 +27,7 @@
 
     <div class="ui divider"></div>
     <div class="ui grid">
-    
+
       <div class="four wide column">
         <h4 class="ui header">Impfung</h4>
         <span *ngFor="let vac of location.vaccinations; last as l">
